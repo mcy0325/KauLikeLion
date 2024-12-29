@@ -3,18 +3,18 @@
   text-align: center;
 }
 
-.section-header {
+.projects-header {
   text-align: left;
   margin: 0 4rem 0 4rem;
 }
 
-.section-header .intro {
+.projects-header .projects-intro {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #299bd8;
 }
 
-.section-header .header-title {
+.projects-header .projects-header-title {
   font-size: 1.8rem;
   font-weight: bold;
   display: flex;
@@ -24,7 +24,7 @@
   color: #303030;
 }
 
-.section-header a {
+.projects-header a {
   font-size: 0.9rem;
   color: #299bd8;
   text-decoration: none;
@@ -37,57 +37,4 @@
   flex-wrap: wrap;
   padding: 1rem 0;
   margin-left: 4rem;
-}
-
-.project-card {
-  width: 280px;
-  height: 180px;
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #424242;
-  text-decoration: none;
-  transform: translateY(0);
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.project-card .title {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: left;
-  color: white;
-}
-
-.project-card .batch {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  text-align: right;
-  color: white;
-}
-
-.project-card .batch .from {
-  font-size: 0.8rem;
-  font-weight: normal;
-  opacity: 0.8;
-  display: block;
-}
-
-.project-card .batch .batch-number {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.2;
-  display: block;
 }

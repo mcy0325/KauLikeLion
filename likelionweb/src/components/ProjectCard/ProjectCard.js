@@ -3,11 +3,20 @@ import "./ProjectCard.css";
 
 function ProjectCard({ project }) {
   return (
-    <div className="project-card">
-      <img src={project.img} alt={project.title} />
-      <h3>{project.title}</h3>
-      <span className="batch">FROM {project.batch}</span>
-    </div>
+    <a
+      key={project.index}
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="project-card"
+      style={{ backgroundImage: `url(${project.img})` }}
+    >
+      <div className="title">{project.title}</div>
+      <div className="batch">
+        <div className="from">FROM</div>
+        <div className="batch-number">{project.batch}</div>
+      </div>
+    </a>
   );
 }
 

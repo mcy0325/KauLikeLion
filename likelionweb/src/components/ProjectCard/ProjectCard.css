@@ -1,25 +1,52 @@
-/* .project-card {
-  width: 200px;
-  text-align: center;
-  background: white;
+.project-card {
+  width: 280px;
+  height: 180px;
+  background-color: black;
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #424242;
+  text-decoration: none;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-.project-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.project-card h3 {
-  margin: 0.5rem 0 0.2rem;
+.project-card .title {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   font-size: 1rem;
-  color: #333;
+  font-weight: bold;
+  text-align: left;
+  color: white;
 }
 
 .project-card .batch {
-  font-size: 0.9rem;
-  color: #666;
-} */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-align: right;
+  color: white;
+}
+
+.project-card .batch .from {
+  font-size: 0.8rem;
+  font-weight: normal;
+  opacity: 0.8;
+  display: block;
+}
+
+.project-card .batch .batch-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  display: block;
+}

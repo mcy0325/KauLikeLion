@@ -4,7 +4,7 @@ import "./ManagementCard.css";
 function ManagementCard({ person }) {
   return (
     <a
-      key={person.name}
+      key={person.index}
       href={person.link}
       target="_blank"
       rel="noopener noreferrer"

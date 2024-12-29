@@ -84,7 +84,7 @@ function About() {
       <div className="main-banner">
         <div className="banner-title">Growl To World!</div>
         <div className="banner-subtitle">한국항공대학교 멋쟁이사자처럼</div>
-        <div className="banner-description">
+        <div className="about-description">
           멋쟁이사자처럼은 현재 전국 42개 대학이 함께하고 있는 연합
           동아리입니다. <br />
           한국항공대학교 멋사는 “내 아아디어를 내 손으로 실현한다”라는 슬로건
