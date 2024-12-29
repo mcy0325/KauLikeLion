@@ -1,0 +1,67 @@
+.recruitment-section {
+  position: relative;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url("../../../public/recruitsectionBackground.svg") no-repeat
+    center;
+  background-size: cover;
+  color: #333;
+}
+
+.recruitment-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.recruitment-header .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a9ad7;
+  margin-bottom: 0.5rem;
+}
+
+.recruitment-header .subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #303030;
+  margin-bottom: 0.5rem;
+}
+
+.recruitment-header .period {
+  font-size: 1rem;
+  color: #299bd8;
+}
+
+.recruitment-content {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recruitment-content .description div {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.recruitment-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background-color: #f99a0e;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.recruitment-btn:hover {
+  background-color: #e07a00;
+}
