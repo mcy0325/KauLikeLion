@@ -3,12 +3,22 @@ import "./ManagementCard.css";
 
 function ManagementCard({ person }) {
   return (
-    <div className="management-card">
+    <a
+      key={person.name}
+      href={person.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card"
+    >
       <img src={person.img} alt={person.name} />
-      <h3>{person.name}</h3>
-      <p>{person.department}</p>
-      <span className="role">{person.role}</span>
-    </div>
+      <div className="card-details">
+        <div className="card-info">
+          <div className="name">{person.name}</div>
+          <div className="department">{person.department}</div>
+        </div>
+        <div className="role">{person.role}</div>
+      </div>
+    </a>
   );
 }
 

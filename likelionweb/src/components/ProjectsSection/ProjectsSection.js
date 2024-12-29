@@ -24,7 +24,7 @@ function ProjectsSection() {
     {
       title: "???",
       batch: "13TH",
-      img: "/images/image4.jpg",
+      img: "/likelion_logo.png",
       link: "https://github.com/project1",
     },
   ];
