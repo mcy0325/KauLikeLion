@@ -53,8 +53,8 @@ function About() {
       name: "제리",
       role: "운영진",
       department: "소프트웨어학과",
-      img: "/images/img3.jpg",
-      link: "https://github.com/",
+      img: "/jerry_13.png",
+      link: "https://github.com/yyoonngg",
     },
     {
       name: "이사장",
@@ -68,14 +68,14 @@ function About() {
       role: "운영진",
       department: "소프트웨어학과",
       img: "/jyujyu_13.png",
-      link: "https://github.com/",
+      link: "https://github.com/JuJu-0225",
     },
     {
       name: "얀",
       role: "운영진",
       department: "소프트웨어학과",
       img: "/yaan_13.png",
-      link: "https://github.com/",
+      link: "https://github.com/yaaan7",
     },
   ];
 
