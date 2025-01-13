@@ -45,6 +45,7 @@
 }
 
 .project-card .batch .batch-number {
+  font-family: "BalooBhai2";
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.2;

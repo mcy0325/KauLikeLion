@@ -9,12 +9,15 @@
 
 .logo {
   font-size: 1.5rem;
+  font-family: "BalooBhai2";
   font-weight: bold;
   color: #f99a0e;
   text-decoration: none;
 }
 
 .logo .highlight {
+  font-family: "BalooBhai2";
+  font-weight: bold;
   color: #299bd8;
 }
 

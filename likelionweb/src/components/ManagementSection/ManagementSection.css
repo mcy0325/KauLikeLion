@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BalooBhai2";
+  src: url("../../fonts/BalooBhai2-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .management-section {
   text-align: center;
   padding: 2rem 0;
@@ -9,6 +23,7 @@
 }
 
 .management-intro {
+  font-weight: bold;
   font-size: 1rem;
   color: #299bd8;
   margin-bottom: 1rem;
