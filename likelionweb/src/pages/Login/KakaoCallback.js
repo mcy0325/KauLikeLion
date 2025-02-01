@@ -12,8 +12,8 @@ function KakaoCallback() {
       axios
         .post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/kakao`, { code })
         .then((res) => {
-          localStorage.setItem("token", res.data.token);
-          navigate("/");
+          localStorage.setItem("token", res.data.token); //JWT 저장 (로그인 상태 유지)
+          navigate("/"); //로그인 성공 후 홈 화면으로 이동
         })
         .catch(() => {
           alert("카카오 로그인 실패");

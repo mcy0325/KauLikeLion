@@ -5,7 +5,6 @@ const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${proc
 function Login() {
   return (
     <div style={styles.container}>
-      <h2>로그인</h2>
       <button
         onClick={() => (window.location.href = KAKAO_AUTH_URL)}
         style={styles.kakaoButton}
