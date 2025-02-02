@@ -1,7 +1,14 @@
 import React from "react";
 import "./MainBanner.css";
+import { useNavigate } from "react-router-dom";
 
 function MainBanner() {
+  const navigate = useNavigate();
+
+  const handleSearchClick = () => {
+    navigate("/certificate");
+  };
+
   return (
     <div className="main-banner">
       <div className="banner-title">Growl To World!</div>
@@ -30,13 +37,15 @@ function MainBanner() {
           </div>
           <div className="input-field">
             <div className="field-label">Arrival</div>
-            <input type="text" value="LIKELION 12TH" readOnly />
+            <input type="text" value="LIKELION 13TH" readOnly />
           </div>
           <div className="input-field">
             <div className="field-label">Date</div>
-            <input type="date" value="2024-03-11" readOnly />
+            <input type="date" value="2024-03-13" readOnly />
           </div>
-          <button className="search-button">SEARCH FLIGHTS</button>
+          <button className="search-button" onClick={handleSearchClick}>
+            SEARCH FLIGHTS
+          </button>
         </div>
       </div>
     </div>
