@@ -9,8 +9,14 @@ function ProjectCard({ project }) {
       target="_blank"
       rel="noopener noreferrer"
       className="project-card"
-      style={{ backgroundImage: `url(${project.img})` }}
     >
+      {project.img && (
+        <img
+          src={project.img}
+          alt={`${project.title} 로고`}
+          className="project-logo"
+        />
+      )}
       <div className="title">{project.title}</div>
       <div className="batch">
         <div className="from">FROM</div>

@@ -7,19 +7,19 @@ function ProjectsSection() {
     {
       title: "우리 따라왕",
       batch: "12TH",
-      img: "",
+      img: "/github_logo.svg",
       link: "https://github.com/LikelionKau12th/WooWang_FE.git",
     },
     {
       title: "멋사이클링",
       batch: "12TH",
-      img: "",
+      img: "/github_logo.svg",
       link: "https://github.com/LikelionKau12th/mutcycle.git",
     },
     {
       title: "우리랑 아기랑",
       batch: "12TH",
-      img: "",
+      img: "/github_logo.svg",
       link: "https://github.com/LikelionKau12th/BabyWithUs-Front.git",
     },
   ];
