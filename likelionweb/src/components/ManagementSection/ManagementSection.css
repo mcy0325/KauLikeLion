@@ -14,7 +14,7 @@ body {
 
 .management-section {
   text-align: center;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 
 .management-header {
@@ -38,10 +38,10 @@ body {
 
 .management-cards {
   display: flex;
-  justify-content: center;
+  margin-left: 4rem;
   gap: 1rem;
   overflow-x: auto;
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
 }
 
 .management-cards::-webkit-scrollbar {
