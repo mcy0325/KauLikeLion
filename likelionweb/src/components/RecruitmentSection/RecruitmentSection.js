@@ -23,7 +23,7 @@ function RecruitmentSection() {
           <div>많은 관심과 지원 부탁드립니다 :)</div>
         </div>
         <a
-          href="https://forms.gle/asJzMEUBpjDagRHM9"
+          href="https://forms.gle/7amaU9CRNZYBcpio9"
           className="recruitment-btn"
           target="_blank"
           rel="noopener noreferrer"
