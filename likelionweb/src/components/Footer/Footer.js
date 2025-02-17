@@ -15,7 +15,10 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <div>&copy; 2024 멋쟁이사자처럼. All rights reserved.</div>
+        <div>
+          &copy; Korea Aerospace University LIKELION 12TH Ari All rights
+          reserved.
+        </div>
       </div>
     </footer>
   );

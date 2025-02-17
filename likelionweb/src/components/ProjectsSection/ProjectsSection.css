@@ -35,7 +35,23 @@
   display: flex;
   justify-content: start;
   gap: 1rem;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  flex-wrap: nowrap;
   padding: 1rem 0 2rem 0;
   margin-left: 4rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .projects-intro {
+    display: none;
+  }
+  .projects-header-title a {
+    display: none;
+  }
 }

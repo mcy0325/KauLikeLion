@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Roboto";
-  src: url("../../fonts/Roboto-Regular.ttf") format("truetype");
+  font-family: "Dunggeunmiso-R";
+  src: url("../../fonts/Dunggeunmiso-R.ttf") format("truetype");
 }
 
 @font-face {
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Dunggeunmiso-R", sans-serif;
 }
 
 .management-section {
@@ -42,6 +42,12 @@ body {
   gap: 1rem;
   overflow-x: auto;
   padding: 1rem 0 2rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .management-cards::-webkit-scrollbar {
@@ -51,4 +57,10 @@ body {
 .management-cards::-webkit-scrollbar-thumb {
   background-color: #ccc;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .management-intro {
+    display: none;
+  }
 }

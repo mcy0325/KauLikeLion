@@ -8,7 +8,7 @@ function RecruitmentSection() {
         <div className="title">LIKELION Korea Aerospace University</div>
         <div className="subtitle">13기 아기 사자 모집 START!</div>
         <div className="period">
-          서류 접수 기간: 02월 21일 (금) 13:00 ~ 03월 04일 (화) 13:00
+          서류 접수 기간: 02월 17일 (월) 13:00 ~ 03월 04일 (화) 13:00
         </div>
       </div>
       <div className="recruitment-content">

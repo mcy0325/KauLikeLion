@@ -18,13 +18,14 @@
   font-weight: bold;
   color: #2a9ad7;
   margin-bottom: 0.5rem;
+  font-family: "BalooBhai2";
 }
 
 .recruitment-header .subtitle {
   font-size: 2rem;
   font-weight: bold;
   color: #303030;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .recruitment-header .period {
