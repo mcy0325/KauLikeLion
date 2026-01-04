@@ -4,25 +4,22 @@ export const CardContainer = styled.div`
   background: ${({ theme }) => theme.colors.cardBg};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 12px;
-  overflow: hidden;
   transition: all ${({ theme }) => theme.transitions.medium};
   display: flex;
   flex-direction: column;
-`;
+  box-shadow: ${({ theme }) => theme.shadows.md};
+  padding: 1rem;
+  gap: 0.25rem;
 
-export const CardThumbnail = styled.img`
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ theme }) => theme.shadows.lg};
+    border-color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const CardContent = styled.div`
-  padding: 1.5rem;
+  padding: 0.75rem 0.5rem 0.5rem;
   flex: 1;
   display: flex;
   flex-direction: column;

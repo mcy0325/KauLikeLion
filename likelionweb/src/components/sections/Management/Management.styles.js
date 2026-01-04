@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ManagementContainer = styled.section`
   padding: 5rem 2rem;
-  background-color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.background};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 3rem 1rem;
@@ -15,9 +15,12 @@ export const ManagementHeader = styled.div`
 `;
 
 export const ManagementIntro = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.base};
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 0.5rem;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  color: ${({ theme }) => theme.colors.primary};
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
 `;
 
 export const ManagementTitle = styled.div`

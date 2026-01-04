@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
 import { staggerContainer, staggerItem } from '../../../styles/animations';
 import { projects } from '../../../data/projects';
 import ProjectCard from './ProjectCard';
@@ -9,13 +8,10 @@ import {
   ProjectsHeader,
   ProjectsIntro,
   ProjectsHeaderTitle,
-  ViewAllLink,
   ProjectsGrid
 } from './Projects.styles';
 
 function Projects() {
-  const displayProjects = projects.slice(0, 3);
-
   return (
     <ProjectsContainer>
       <ProjectsHeader
@@ -30,9 +26,6 @@ function Projects() {
         </ProjectsIntro>
         <ProjectsHeaderTitle>
           LIKELION Projects{' '}
-          <ViewAllLink as={NavLink} to="/projects">
-            View all services →
-          </ViewAllLink>
         </ProjectsHeaderTitle>
       </ProjectsHeader>
 
@@ -43,7 +36,7 @@ function Projects() {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        {displayProjects.map((project, index) => (
+        {projects.map((project, index) => (
           <motion.div key={project.id} variants={staggerItem}>
             <ProjectCard project={project} />
           </motion.div>

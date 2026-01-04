@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import { ThemeProvider } from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { lightTheme, darkTheme } from './styles/theme';
-import { useDarkMode } from './hooks/useDarkMode';
+import { lightTheme } from './styles/theme';
 import Navbar from './components/layout/Navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
 import ScrollToTop from './utils/scrollRestoration';
@@ -27,8 +26,7 @@ function AnimatedRoutes() {
 }
 
 function App() {
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const theme = isDarkMode ? darkTheme : lightTheme;
+  const theme = lightTheme;
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,7 +34,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <div className="App">
-          <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+          <Navbar />
           <AnimatedRoutes />
           <Footer />
         </div>

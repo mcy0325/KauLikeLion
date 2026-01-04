@@ -49,7 +49,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.fonts.primary};
-    background-color: ${({ theme }) => theme.colors.background};
+    background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -58,6 +58,25 @@ export const GlobalStyles = createGlobalStyle`
     overflow-y: auto;
     transition: background-color ${({ theme }) => theme.transitions.medium},
                 color ${({ theme }) => theme.transitions.medium};
+    padding-top: 72px;
+
+    /* Subtle cloud pattern background */
+    position: relative;
+
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(224, 242, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 60%, rgba(135, 206, 235, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(224, 242, 255, 0.25) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
   }
 
   #root {
@@ -84,22 +103,19 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  /* Custom Scrollbar */
+  /* Hide Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    display: none;
   }
 
-  ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.backgroundAlt};
+  /* For Firefox */
+  * {
+    scrollbar-width: none;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.primary};
-    border-radius: 5px;
-
-    &:hover {
-      background: ${({ theme }) => theme.colors.primaryHover};
-    }
+  /* For IE and Edge */
+  * {
+    -ms-overflow-style: none;
   }
 
   /* Utility Classes */

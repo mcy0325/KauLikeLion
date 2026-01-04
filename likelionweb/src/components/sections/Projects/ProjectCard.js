@@ -4,7 +4,6 @@ import { FiExternalLink } from 'react-icons/fi';
 import { glassCardHover } from '../../../styles/animations';
 import {
   CardContainer,
-  CardThumbnail,
   CardContent,
   CardTitle,
   CardBatch,
@@ -22,11 +21,6 @@ function ProjectCard({ project }) {
       initial="rest"
       whileHover="hover"
     >
-      <CardThumbnail
-        src={project.thumbnail}
-        alt={project.title}
-        loading="lazy"
-      />
       <CardContent>
         <CardBatch>{project.generation}th</CardBatch>
         <CardTitle>{project.title}</CardTitle>

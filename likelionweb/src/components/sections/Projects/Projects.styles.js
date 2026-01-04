@@ -38,17 +38,6 @@ export const ProjectsHeaderTitle = styled.div`
   }
 `;
 
-export const ViewAllLink = styled.a`
-  font-size: ${({ theme }) => theme.fontSizes.base};
-  color: ${({ theme }) => theme.colors.accent};
-  text-decoration: none;
-  transition: color ${({ theme }) => theme.transitions.fast};
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
-  }
-`;
-
 export const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

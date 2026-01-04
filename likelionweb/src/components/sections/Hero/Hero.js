@@ -1,23 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiChevronDown } from 'react-icons/fi';
-import { slideUp, runwayArrow, airplaneTrajectory } from '../../../styles/animations';
+import { slideUp, slideInRight } from '../../../styles/animations';
 import { siteContent } from '../../../data/content';
 import {
   HeroContainer,
-  HeroContent,
+  HeroGrid,
+  HeroText,
+  HeroBadge,
+  BadgeDot,
+  BadgeDivider,
   HeroTitle,
   HeroSubtitle,
-  FlightSearchCard,
-  RadioGroup,
-  RadioLabel,
-  InputGroup,
-  InputField,
-  FieldLabel,
-  Input,
-  SearchButton,
-  ScrollIndicator,
-  AirplaneSVG
+  HeroDescription,
+  HeroMeta,
+  MetaItem,
+  MetaLabel,
+  MetaValue,
+  HeroBoard,
+  BoardGlow,
+  BoardHeader,
+  BoardTag,
+  BoardStatus,
+  BoardRoute,
+  AirportCode,
+  RouteArrow,
+  BoardPath,
+  PathLine,
+  PathNodes,
+  PathNode,
+  PathDot,
+  PathLabel
 } from './Hero.styles';
 
 function Hero() {
@@ -25,77 +37,81 @@ function Hero() {
 
   return (
     <HeroContainer>
-      {/* Animated airplane trajectory background */}
-      <AirplaneSVG>
-        <motion.path
-          d="M 50 400 Q 200 300, 400 350 T 800 300"
-          stroke="rgba(96, 165, 250, 0.3)"
-          strokeWidth="2"
-          fill="none"
-          variants={airplaneTrajectory}
+      <HeroGrid>
+        <HeroText
+          as={motion.div}
+          variants={slideUp}
           initial="initial"
           animate="animate"
-        />
-      </AirplaneSVG>
-
-      <HeroContent
-        as={motion.div}
-        variants={slideUp}
-        initial="initial"
-        animate="animate"
-      >
-        <HeroTitle>{hero.mainTitle}</HeroTitle>
-        <HeroSubtitle>{hero.subtitle}</HeroSubtitle>
-
-        <FlightSearchCard
-          as={motion.div}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <RadioGroup>
-            <RadioLabel>
-              <input type="radio" name="trip-type" value="return" disabled />
-              Return
-            </RadioLabel>
-            <RadioLabel>
-              <input type="radio" name="trip-type" value="oneway" defaultChecked disabled />
-              One-way
-            </RadioLabel>
-          </RadioGroup>
+          <HeroBadge>
+            <BadgeDot />
+            <span>KAU LIKELION</span>
+            <BadgeDivider />
+            <span>Flight Mode</span>
+          </HeroBadge>
 
-          <InputGroup>
-            <InputField>
-              <FieldLabel>Departure</FieldLabel>
-              <Input type="text" value={hero.flightSearch.departure} readOnly />
-            </InputField>
-            <InputField>
-              <FieldLabel>Arrival</FieldLabel>
-              <Input type="text" value={hero.flightSearch.arrival} readOnly />
-            </InputField>
-            <InputField>
-              <FieldLabel>Date</FieldLabel>
-              <Input type="date" value={hero.flightSearch.date} readOnly />
-            </InputField>
-            <SearchButton
-              as={motion.button}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255, 119, 16, 0.5)' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              SEARCH FLIGHTS
-            </SearchButton>
-          </InputGroup>
-        </FlightSearchCard>
-      </HeroContent>
+          <HeroTitle>{hero.mainTitle}</HeroTitle>
+          <HeroSubtitle>{hero.subtitle}</HeroSubtitle>
+          <HeroDescription>항공대 멋쟁이사자처럼이 아이디어를 현실로 이륙시키는 여정을 시작합니다.</HeroDescription>
 
-      <ScrollIndicator
-        as={motion.div}
-        variants={runwayArrow}
-        animate="animate"
-        aria-label="Scroll down"
-      >
-        <FiChevronDown size={32} />
-      </ScrollIndicator>
+          <HeroMeta>
+            <MetaItem>
+              <MetaLabel>Departure</MetaLabel>
+              <MetaValue>{hero.flightSearch.departure}</MetaValue>
+            </MetaItem>
+            <MetaItem>
+              <MetaLabel>Arrival</MetaLabel>
+              <MetaValue>{hero.flightSearch.arrival}</MetaValue>
+            </MetaItem>
+            <MetaItem>
+              <MetaLabel>Flight Date</MetaLabel>
+              <MetaValue>{hero.flightSearch.date}</MetaValue>
+            </MetaItem>
+          </HeroMeta>
+        </HeroText>
+
+        <HeroBoard
+          as={motion.div}
+          variants={slideInRight}
+          initial="initial"
+          animate="animate"
+        >
+          <BoardGlow />
+          <BoardHeader>
+            <BoardTag>Boarding Pass</BoardTag>
+            <BoardStatus>Creative Flight Mode</BoardStatus>
+          </BoardHeader>
+
+          <BoardRoute>
+            <AirportCode>KAU</AirportCode>
+            <RouteArrow />
+            <AirportCode>LION</AirportCode>
+          </BoardRoute>
+
+          <BoardPath>
+            <PathLine />
+            <PathNodes>
+              <PathNode>
+                <PathDot />
+                <PathLabel>KAU</PathLabel>
+              </PathNode>
+              <PathNode>
+                <PathDot />
+                <PathLabel>IDEA</PathLabel>
+              </PathNode>
+              <PathNode>
+                <PathDot />
+                <PathLabel>DEVELOPMENT</PathLabel>
+              </PathNode>
+              <PathNode>
+                <PathDot />
+                <PathLabel>LION</PathLabel>
+              </PathNode>
+            </PathNodes>
+          </BoardPath>
+        </HeroBoard>
+      </HeroGrid>
     </HeroContainer>
   );
 }

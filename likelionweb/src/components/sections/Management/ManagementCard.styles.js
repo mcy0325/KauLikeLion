@@ -1,29 +1,19 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
-  background: ${({ theme }) => theme.colors.glassBg};
+  background: ${({ theme }) => theme.colors.cardBg};
   backdrop-filter: ${({ theme }) => theme.colors.glassBlur};
   border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: all ${({ theme }) => theme.transitions.medium};
-  position: relative;
+  box-shadow: ${({ theme }) => theme.shadows.md};
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: ${({ theme }) => theme.gradients.sunset};
-    transform: scaleX(0);
-    transition: transform ${({ theme }) => theme.transitions.medium};
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ theme }) => theme.shadows.lg};
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

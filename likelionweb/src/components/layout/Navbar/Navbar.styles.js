@@ -7,16 +7,20 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: ${({ theme }) => theme.colors.glassBlur};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  position: sticky;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: ${({ theme }) => theme.zIndex.sticky};
-  transition: background-color ${({ theme }) => theme.transitions.medium};
+  transition: all ${({ theme }) => theme.transitions.medium};
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 1rem;
+    height: 64px;
   }
 `;
 
@@ -26,11 +30,7 @@ export const Logo = styled(NavLink)`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
-  transition: color ${({ theme }) => theme.transitions.fast};
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.primaryHover};
-  }
+  transition: all ${({ theme }) => theme.transitions.fast};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 1.2rem;
@@ -40,15 +40,26 @@ export const Logo = styled(NavLink)`
 export const LogoHighlight = styled.span`
   font-family: ${({ theme }) => theme.fonts.english};
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const NavRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    gap: 1rem;
+  }
 `;
 
 export const NavLinks = styled.ul`
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: none;
@@ -63,19 +74,20 @@ export const NavLinkStyled = styled(NavLink)`
   color: ${({ theme }) => theme.colors.text};
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   transition: all ${({ theme }) => theme.transitions.fast};
   font-family: ${({ theme }) => theme.fonts.primary};
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  position: relative;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.backgroundAlt};
+    background: ${({ theme }) => theme.colors.backgroundAlt};
     color: ${({ theme }) => theme.colors.primary};
   }
 
   &.active {
-    color: ${({ theme }) => theme.colors.primary};
     font-weight: bold;
-    background-color: ${({ theme }) => theme.colors.backgroundAlt};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -89,22 +101,5 @@ export const MobileMenuButton = styled(motion.button)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     display: block;
-  }
-`;
-
-export const DarkModeToggle = styled(motion.button)`
-  background: none;
-  border: none;
-  color: ${({ theme }) => theme.colors.text};
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background-color ${({ theme }) => theme.transitions.fast};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.backgroundAlt};
   }
 `;

@@ -1,21 +1,37 @@
 export const lightTheme = {
   colors: {
-    // Primary Colors
+    // Primary Colors - LIKELION
     primary: '#ff7710',        // LIKELION orange
     primaryHover: '#f77a0e',
     primaryLight: '#f99a0e',
 
-    // Secondary Colors
+    // Secondary Colors - Aviation Sky
     secondary: '#299bd8',      // Sky blue
     secondaryHover: '#1262af',
 
-    // Accent Colors
+    // Accent Colors - Deep Blue
     accent: '#1262af',         // Deep blue
     accentLight: '#299bd8',
+
+    // Aviation Theme Colors
+    sky: {
+      light: '#e0f2ff',        // Light sky blue
+      base: '#87ceeb',         // Sky blue
+      medium: '#299bd8',       // Medium blue
+      deep: '#1262af',         // Deep blue
+      navy: '#0a1e42',         // Navy blue
+    },
+
+    cloud: {
+      white: '#ffffff',
+      light: '#f7f9fc',
+      gray: '#e6edf5',
+    },
 
     // Background Colors
     background: '#FFFFFF',
     backgroundAlt: '#F9FAFB',
+    backgroundSky: '#f0f8ff',  // Alice blue for sections
 
     // Text Colors
     text: '#424242',
@@ -24,15 +40,26 @@ export const lightTheme = {
 
     // UI Elements
     border: '#E5E7EB',
+    borderSky: '#b3d9f2',      // Sky-themed border
     cardBg: 'rgba(255, 255, 255, 0.95)',
     glassBg: 'rgba(255, 255, 255, 0.1)',
     glassBlur: 'blur(10px)',
+
+    // Boarding Pass Colors
+    ticket: {
+      border: '#d4af37',       // Gold
+      perforation: '#cccccc',
+      barcode: '#000000',
+    },
   },
 
   gradients: {
-    sky: 'linear-gradient(180deg, #299bd8 0%, #1262af 100%)',
+    sky: 'linear-gradient(180deg, #87ceeb 0%, #299bd8 50%, #1262af 100%)',
+    skyHorizon: 'linear-gradient(180deg, #e0f2ff 0%, #87ceeb 50%, #299bd8 100%)',
     sunset: 'linear-gradient(135deg, #ff7710 0%, #f99a0e 100%)',
     heroOverlay: 'linear-gradient(135deg, rgba(41, 155, 216, 0.1) 0%, rgba(18, 98, 175, 0.1) 100%)',
+    cloudyDay: 'linear-gradient(to bottom, #e0f2ff 0%, #ffffff 50%, #f7f9fc 100%)',
+    airplaneStripe: 'linear-gradient(90deg, #1262af 0%, #299bd8 50%, #87ceeb 100%)',
   },
 
   fonts: {
@@ -77,6 +104,9 @@ export const lightTheme = {
     lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
     xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
     glow: '0 0 20px rgba(255, 119, 16, 0.5)',
+    airplane: '0 8px 16px rgba(18, 98, 175, 0.15)',
+    cloud: '0 4px 20px rgba(135, 206, 235, 0.2)',
+    ticket: '0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8)',
   },
 
   transitions: {
