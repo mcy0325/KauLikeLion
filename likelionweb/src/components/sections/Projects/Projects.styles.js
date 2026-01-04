@@ -15,9 +15,12 @@ export const ProjectsHeader = styled.div`
 `;
 
 export const ProjectsIntro = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.base};
-  color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 0.5rem;
+ font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  color: ${({ theme }) => theme.colors.primary};
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
 `;
 
 export const ProjectsHeaderTitle = styled.div`
