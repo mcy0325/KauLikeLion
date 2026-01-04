@@ -46,7 +46,7 @@ export const siteContent = {
   },
 
   footer: {
-    copyright: '© Korea Aerospace University LIKELION 13th Ari All rights reserved.',
+    copyright: '© Korea Aerospace University LIKELION 13th President Ari All rights reserved.',
     socialLinks: {
       github: 'https://github.com/kau-likelion',
       instagram: 'https://instagram.com/kau_likelion',
