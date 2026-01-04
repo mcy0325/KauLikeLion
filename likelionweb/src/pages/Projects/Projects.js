@@ -1,72 +1,101 @@
-import React from "react";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import "./Projects.css";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { pageTransition, staggerContainer, staggerItem } from '../../styles/animations';
+import { getProjectsByGeneration } from '../../data/projects';
+import { siteContent } from '../../data/content';
+import ProjectCard from '../../components/sections/Projects/ProjectCard';
+import {
+  PageContainer,
+  Banner,
+  BannerTitle,
+  BannerSubtitle,
+  Description,
+  ProjectsSection,
+  SectionHeader,
+  SectionIntro,
+  SectionTitle,
+  ProjectsGrid,
+  EmptyState
+} from './Projects.styles';
 
 function Projects() {
-  const projects12 = [
-    {
-      title: "우리 따라왕",
-      batch: "12TH",
-      img: "/github_logo.svg",
-      link: "https://github.com/LikelionKau12th/WooWang_FE.git",
-    },
-    {
-      title: "멋사이클링",
-      batch: "12TH",
-      img: "/github_logo.svg",
-      link: "https://github.com/LikelionKau12th/mutcycle.git",
-    },
-    {
-      title: "우리랑 아기랑",
-      batch: "12TH",
-      img: "/github_logo.svg",
-      link: "https://github.com/LikelionKau12th/BabyWithUs-Front.git",
-    },
-  ];
-
-  const projects13 = [];
+  const projects12 = getProjectsByGeneration(12);
+  const projects13 = getProjectsByGeneration(13);
 
   return (
-    <div className="projects">
-      <div className="main-banner">
-        <div className="banner-title">Growl To World!</div>
-        <div className="banner-subtitle">한국항공대학교 멋쟁이사자처럼</div>
-        <div className="projects-description">
-          한국항공대학교 멋쟁이사자처럼에서 개발한 다양한 웹 서비스를
-          소개합니다.
-        </div>
-      </div>
+    <PageContainer
+      as={motion.div}
+      variants={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <Banner>
+        <BannerTitle>{siteContent.organization.slogan}</BannerTitle>
+        <BannerSubtitle>{siteContent.organization.nameKr}</BannerSubtitle>
+        <Description>
+          한국항공대학교 멋쟁이사자처럼에서 개발한 다양한 웹/앱 서비스를 소개합니다.
+        </Description>
+      </Banner>
 
-      <div className="projects-section">
-        <div className="projects-header">
-          <div className="projects-intro">
-            2024년 한국항공대학교 멋쟁이사자처럼
-          </div>
-          <div className="projects-header-title">
-            LIKELION 12TH Web Service Projects
-          </div>
-        </div>
-        <div className="projects-grid">
+      <ProjectsSection>
+        <SectionHeader
+          as={motion.div}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <SectionIntro>2024년 한국항공대학교 멋쟁이사자처럼</SectionIntro>
+          <SectionTitle>LIKELION 12th Projects</SectionTitle>
+        </SectionHeader>
+
+        <ProjectsGrid
+          as={motion.div}
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           {projects12.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <motion.div key={project.id} variants={staggerItem}>
+              <ProjectCard project={project} />
+            </motion.div>
           ))}
-        </div>
+        </ProjectsGrid>
 
-        <div className="projects-header">
-          <div className="projects-intro">
-            2025년 한국항공대학교 멋쟁이사자처럼
-          </div>
-          <div className="projects-header-title">
-            LIKELION 13TH Web Service Projects
-          </div>
-        </div>
-        <div className="projects-grid">
-          {projects13.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-      </div>
-    </div>
+        <SectionHeader
+          as={motion.div}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <SectionIntro>2025년 한국항공대학교 멋쟁이사자처럼</SectionIntro>
+          <SectionTitle>LIKELION 13th Projects</SectionTitle>
+        </SectionHeader>
+
+        {projects13.length > 0 ? (
+          <ProjectsGrid
+            as={motion.div}
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {projects13.map((project, index) => (
+              <motion.div key={project.id} variants={staggerItem}>
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </ProjectsGrid>
+        ) : (
+          <EmptyState>
+            <p>13기 프로젝트가 곧 공개됩니다!</p>
+          </EmptyState>
+        )}
+      </ProjectsSection>
+    </PageContainer>
   );
 }
 

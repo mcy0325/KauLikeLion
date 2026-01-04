@@ -44,6 +44,7 @@ export const GlobalStyles = createGlobalStyle`
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: auto;
   }
 
   body {
@@ -54,19 +55,17 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    overflow-y: auto;
     transition: background-color ${({ theme }) => theme.transitions.medium},
                 color ${({ theme }) => theme.transitions.medium};
   }
 
   #root {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
 
   /* Typography */
   h1, h2, h3, h4, h5, h6 {
-    font-family: ${({ theme }) => theme.fonts.english};
     line-height: 1.2;
     color: ${({ theme }) => theme.colors.text};
   }

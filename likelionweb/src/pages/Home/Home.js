@@ -1,17 +1,26 @@
-import React from "react";
-import MainBanner from "../../components/MainBanner/MainBanner";
-import ManagementSection from "../../components/ManagementSection/ManagementSection";
-import ProjectsSection from "../../components/ProjectsSection/ProjectsSection";
-import RecruitmentSection from "../../components/RecruitmentSection/RecruitmentSection";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { pageTransition } from '../../styles/animations';
+import Hero from '../../components/sections/Hero/Hero';
+import Management from '../../components/sections/Management/Management';
+import Projects from '../../components/sections/Projects/Projects';
+import Recruitment from '../../components/sections/Recruitment/Recruitment';
+import { PageContainer } from './Home.styles';
 
 function Home() {
   return (
-    <div>
-      <MainBanner />
-      <ManagementSection />
-      <ProjectsSection />
-      <RecruitmentSection />
-    </div>
+    <PageContainer
+      as={motion.div}
+      variants={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <Hero />
+      <Management />
+      <Projects />
+      <Recruitment />
+    </PageContainer>
   );
 }
 

@@ -3,15 +3,15 @@ export const siteContent = {
     name: 'LIKELION Korea Aerospace University',
     nameKr: '한국항공대학교 멋쟁이사자처럼',
     shortName: 'LIKELION KAU',
-    slogan: 'Growl To World!',
-    motto: '내 아이디어를 내 손으로 실현한다', // Fixed typo: 아아디어 → 아이디어
+    slogan: 'POSSIBILITY TO REALITY',
+    motto: '내 아이디어를 내 손으로 실현한다',
     description: '웹 개발 & IT 창업 동아리',
     address: '경기도 고양시 덕양구 항공대학로 76',
   },
 
   recruitment: {
-    generation: 13,
-    status: 'open', // 'open', 'closed', 'upcoming'
+    generation: 14,
+    status: 'upcoming', // 'open', 'closed', 'upcoming'
     applicationPeriod: {
       start: '02월 17일 (월) 13:00',
       end: '03월 04일 (화) 13:00',
@@ -46,19 +46,19 @@ export const siteContent = {
   },
 
   footer: {
-    copyright: '© Korea Aerospace University LIKELION 13TH Ari All rights reserved.', // Updated 12TH → 13TH
+    copyright: '© Korea Aerospace University LIKELION 13th Ari All rights reserved.',
     socialLinks: {
-      github: 'https://github.com/likelionkau',
-      instagram: 'https://instagram.com/likelion_kau',
+      github: 'https://github.com/kau-likelion',
+      instagram: 'https://instagram.com/kau_likelion',
     },
   },
 
   hero: {
-    mainTitle: 'Growl To World!',
+    mainTitle: 'POSSIBILITY TO REALITY',
     subtitle: '한국항공대학교 멋쟁이사자처럼',
     flightSearch: {
       departure: 'Korea Aerospace University',
-      arrival: 'LIKELION 13TH',
+      arrival: 'LIKELION 13th',
       date: '2025-03-13',
     },
   },

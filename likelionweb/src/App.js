@@ -1,25 +1,47 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
-import Projects from "./pages/Projects/Projects";
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
+import { GlobalStyles } from './styles/GlobalStyles';
+import { lightTheme, darkTheme } from './styles/theme';
+import { useDarkMode } from './hooks/useDarkMode';
+import Navbar from './components/layout/Navbar/Navbar';
+import Footer from './components/layout/Footer/Footer';
+import ScrollToTop from './utils/scrollRestoration';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Projects from './pages/Projects/Projects';
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 function App() {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const theme = isDarkMode ? darkTheme : lightTheme;
+
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Router>
+        <ScrollToTop />
+        <div className="App">
+          <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+          <AnimatedRoutes />
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

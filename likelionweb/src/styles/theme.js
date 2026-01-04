@@ -1,38 +1,38 @@
 export const lightTheme = {
   colors: {
     // Primary Colors
-    primary: '#FF7710',        // LIKELION orange
-    primaryHover: '#E66600',
-    primaryLight: '#FFA040',
+    primary: '#ff7710',        // LIKELION orange
+    primaryHover: '#f77a0e',
+    primaryLight: '#f99a0e',
 
     // Secondary Colors
-    secondary: '#1E3A8A',      // Deep aviation blue
-    secondaryHover: '#1E40AF',
+    secondary: '#299bd8',      // Sky blue
+    secondaryHover: '#1262af',
 
     // Accent Colors
-    accent: '#60A5FA',         // Bright sky blue
-    accentLight: '#93C5FD',
+    accent: '#1262af',         // Deep blue
+    accentLight: '#299bd8',
 
     // Background Colors
     background: '#FFFFFF',
-    backgroundAlt: '#F8FAFC',  // Cloud white
+    backgroundAlt: '#F9FAFB',
 
     // Text Colors
-    text: '#1F2937',
-    textSecondary: '#6B7280',
-    textLight: '#9CA3AF',
+    text: '#424242',
+    textSecondary: '#666666',
+    textLight: '#999999',
 
     // UI Elements
     border: '#E5E7EB',
-    cardBg: 'rgba(255, 255, 255, 0.9)',
+    cardBg: 'rgba(255, 255, 255, 0.95)',
     glassBg: 'rgba(255, 255, 255, 0.1)',
     glassBlur: 'blur(10px)',
   },
 
   gradients: {
-    sky: 'linear-gradient(180deg, #0F172A 0%, #1E3A8A 50%, #3B82F6 100%)',
-    sunset: 'linear-gradient(135deg, #FF7710 0%, #FBBF24 100%)',
-    heroOverlay: 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 58, 138, 0.6) 100%)',
+    sky: 'linear-gradient(180deg, #299bd8 0%, #1262af 100%)',
+    sunset: 'linear-gradient(135deg, #ff7710 0%, #f99a0e 100%)',
+    heroOverlay: 'linear-gradient(135deg, rgba(41, 155, 216, 0.1) 0%, rgba(18, 98, 175, 0.1) 100%)',
   },
 
   fonts: {
