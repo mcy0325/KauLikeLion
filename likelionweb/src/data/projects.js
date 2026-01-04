@@ -31,12 +31,12 @@ export const projects = [
   },
    {
     id: 'woowang',
-    title: '우리 따라왕',
+    title: '우리따라왕',
     generation: 12,
     year: 2024,
     description: '여행 코스 추천 웹 서비스',
     category: ['Web'],
-    github: 'https://github.com/LikelionKau12th/WooWang_FE.git',
+    github: 'https://github.com/kau-likelion-12th/WooWang-fe.git',
     tags: ['HTML', 'CSS', 'JavaScript', 'Java'],
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
     year: 2024,
     description: '웹 기반 프로젝트',
     category: ['Web'],
-    github: 'https://github.com/LikelionKau12th/mutcycle.git',
+    github: 'https://github.com/kau-likelion-12th/mutcycle.git',
     tags: ['HTML', 'JavaScript', 'Java'],
   },
   {
@@ -56,7 +56,7 @@ export const projects = [
     year: 2024,
     description: '초보 부모들을 위한 임신 동행 웹 서비스',
     category: ['Web'],
-    github: 'https://github.com/LikelionKau12th/BabyWithUs-Front.git',
+    github: 'https://github.com/kau-likelion-12th/BabyWithUs-fe.git',
     tags: ['HTML', 'CSS', 'JavaScript', 'Java'],
   },
 ];
