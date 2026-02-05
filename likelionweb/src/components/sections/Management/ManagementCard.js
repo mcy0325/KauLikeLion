@@ -12,7 +12,7 @@ import {
   GitHubLink
 } from './ManagementCard.styles';
 
-function ManagementCard({ person, index }) {
+function ManagementCard({ person, index, variant }) {
   return (
     <CardContainer
       as={motion.div}
@@ -20,6 +20,7 @@ function ManagementCard({ person, index }) {
       initial="rest"
       whileHover="hover"
       style={{ transitionDelay: `${index * 0.05}s` }}
+      $variant={variant}
     >
       <CardImage src={person.img} alt={person.name} loading="lazy" />
       <CardContent>

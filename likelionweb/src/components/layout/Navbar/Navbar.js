@@ -37,7 +37,7 @@ function Navbar() {
     <>
       <Nav>
         <Logo to="/">
-          <LogoHighlight>Korea Aerospace Univ.</LogoHighlight> LIKELION
+          LIKELION <LogoHighlight>KAU</LogoHighlight>
         </Logo>
 
         <NavRight>

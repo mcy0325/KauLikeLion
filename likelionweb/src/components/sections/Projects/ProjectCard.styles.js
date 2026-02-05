@@ -2,19 +2,23 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
   background: ${({ theme }) => theme.colors.cardBg};
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: 1px solid ${({ $variant, theme }) =>
+    $variant === 'orange' ? 'rgba(255, 255, 255, 0.3)' : theme.colors.border};
   border-radius: 12px;
   transition: all ${({ theme }) => theme.transitions.medium};
   display: flex;
   flex-direction: column;
-  box-shadow: ${({ theme }) => theme.shadows.md};
+  box-shadow: ${({ $variant, theme }) =>
+    $variant === 'orange' ? '0 8px 25px rgba(0, 0, 0, 0.2)' : theme.shadows.md};
   padding: 1rem;
   gap: 0.25rem;
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: ${({ theme }) => theme.shadows.lg};
-    border-color: ${({ theme }) => theme.colors.primary};
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: ${({ theme }) => theme.shadows.lg};
+      border-color: ${({ $variant }) => $variant === 'orange' ? 'white' : '#FF7710'};
+    }
   }
 `;
 

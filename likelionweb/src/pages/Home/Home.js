@@ -2,9 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { pageTransition } from '../../styles/animations';
 import Hero from '../../components/sections/Hero/Hero';
+import About from '../../components/sections/About/About';
+import Roadmap from '../../components/sections/Roadmap/Roadmap';
 import Management from '../../components/sections/Management/Management';
-import Projects from '../../components/sections/Projects/Projects';
-import Recruitment from '../../components/sections/Recruitment/Recruitment';
+import Awards from '../../components/sections/Awards/Awards';
 import { PageContainer } from './Home.styles';
 
 function Home() {
@@ -17,9 +18,10 @@ function Home() {
       exit="exit"
     >
       <Hero />
+      <About />
+      <Roadmap />
       <Management />
-      <Projects />
-      <Recruitment />
+      <Awards />
     </PageContainer>
   );
 }

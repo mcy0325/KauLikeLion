@@ -1,19 +1,33 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.div`
-  background: ${({ theme }) => theme.colors.cardBg};
-  backdrop-filter: ${({ theme }) => theme.colors.glassBlur};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 12px;
+  background: white;
+  border: 3px solid ${({ $variant, theme }) =>
+    $variant === 'orange' ? 'rgba(255, 255, 255, 0.3)' : theme.colors.backgroundCream};
+  border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
   transition: all ${({ theme }) => theme.transitions.medium};
-  box-shadow: ${({ theme }) => theme.shadows.md};
+  box-shadow: ${({ $variant }) =>
+    $variant === 'orange' ? '0 8px 25px rgba(0, 0, 0, 0.2)' : '0 5px 15px rgba(0, 0, 0, 0.1)'};
+  position: relative;
 
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: ${({ theme }) => theme.shadows.lg};
-    border-color: ${({ theme }) => theme.colors.primary};
+  &::before {
+    content: '🎫';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: ${({ theme }) => theme.fontSizes['2xl']};
+    opacity: 0.3;
+    z-index: 1;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: ${({ theme }) => theme.shadows.lg};
+      border-color: ${({ $variant }) => $variant === 'orange' ? 'white' : '#FF7710'};
+    }
   }
 `;
 
@@ -21,10 +35,11 @@ export const CardImage = styled.img`
   width: 100%;
   height: 250px;
   object-fit: cover;
+  object-position: top center;
   display: block;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    height: 200px;
+    height: 280px;
   }
 `;
 
@@ -39,6 +54,10 @@ export const CardName = styled.div`
   color: ${({ theme }) => theme.colors.text};
   margin: 1rem 0 0.5rem;
   font-family: ${({ theme }) => theme.fonts.primary};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 0;
+  }
 `;
 
 export const CardRole = styled.div`
