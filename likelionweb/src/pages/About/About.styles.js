@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const PageContainer = styled.div`
   background: ${({ theme }) => theme.colors.backgroundAlt};
@@ -14,6 +14,7 @@ export const Banner = styled.section`
     url('/mainbannerBackground.svg') no-repeat center center / cover;
   color: #f8fbff;
   isolation: isolate;
+  text-align: center;
 
   &:before {
     content: '';
@@ -28,6 +29,42 @@ export const Banner = styled.section`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 3.5rem 1.25rem 3rem;
+  }
+`;
+
+export const BannerContent = styled.div`
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const BannerDescription = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  color: rgba(248, 251, 255, 0.9);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.fontSizes.base};
+  }
+`;
+
+export const BannerMeta = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 600px;
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    max-width: 300px;
   }
 `;
 
@@ -90,15 +127,15 @@ export const BadgeTag = styled.span`
 `;
 
 export const BannerTitle = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes['5xl']};
+  font-size: ${({ theme }) => theme.fontSizes['6xl']};
   font-family: ${({ theme }) => theme.fonts.english};
   font-weight: bold;
-  margin: 1rem 0 0.6rem;
+  margin-bottom: 0.5rem;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   letter-spacing: 0.02em;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes['3xl']};
+    font-size: ${({ theme }) => theme.fontSizes['4xl']};
   }
 `;
 
@@ -106,7 +143,7 @@ export const BannerSubtitle = styled.div`
   font-size: ${({ theme }) => theme.fontSizes['2xl']};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -326,7 +363,8 @@ export const MetaValue = styled.div`
 export const ManagementSection = styled.section`
   position: relative;
   padding: 4.5rem 2rem 5rem;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ variant, theme }) =>
+    variant === 'cream' ? theme.colors.backgroundCream : theme.colors.background};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 3rem 1.25rem 3.5rem;
@@ -375,4 +413,124 @@ export const ManagementGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.25rem;
   }
+`;
+
+export const HistoryTimeline = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    &::before {
+      left: 20px;
+    }
+  }
+`;
+
+export const HistoryItem = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+`;
+
+export const HistoryYear = styled.div`
+  width: 100px;
+  font-size: ${({ theme }) => theme.fontSizes['2xl']};
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.secondary};
+  text-align: right;
+  padding-right: 2rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 60px;
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+    padding-right: 1rem;
+  }
+`;
+
+export const HistoryMarker = styled.div`
+  width: 20px;
+  height: 20px;
+  background: ${({ theme }) => theme.colors.primary};
+  border: 4px solid white;
+  border-radius: 50%;
+  position: absolute;
+  left: 41px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+`;
+
+export const HistoryContent = styled.div`
+  flex: 1;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-left: 80px;
+  box-shadow: ${({ theme }) => theme.shadows.md};
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateX(10px);
+    box-shadow: ${({ theme }) => theme.shadows.lg};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-left: 50px;
+  }
+`;
+
+export const HistoryGeneration = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: 0.5rem;
+  font-family: ${({ theme }) => theme.fonts.primary};
+`;
+
+export const HistoryLeaders = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const HistoryLeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+`;
+
+export const HistoryLeaderIcon = styled.span`
+  font-size: ${({ theme }) => theme.fontSizes['2xl']};
+`;
+
+export const HistoryLeaderInfo = styled.div`
+  flex: 1;
+`;
+
+export const HistoryLeaderName = styled.span`
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.primary};
+`;
+
+export const HistoryLeaderRole = styled.span`
+  color: ${({ theme }) => theme.colors.textLight};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
 `;

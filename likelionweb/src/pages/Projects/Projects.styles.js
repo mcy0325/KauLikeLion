@@ -5,12 +5,13 @@ export const PageContainer = styled.div``;
 export const Banner = styled.section`
   position: relative;
   overflow: hidden;
-  padding: 6rem 2rem 5rem;
+  padding: 5rem 2rem 4rem;
   background:
-    linear-gradient(135deg, rgba(41, 155, 216, 0.2), rgba(18, 98, 175, 0.8)),
+    linear-gradient(135deg, rgba(41, 155, 216, 0.2), rgba(18, 98, 175, 0.75)),
     url('/mainbannerBackground.svg') no-repeat center center / cover;
   color: #f8fbff;
   isolation: isolate;
+  text-align: center;
 
   &:before {
     content: '';
@@ -24,69 +25,30 @@ export const Banner = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 4.5rem 1.25rem 3.5rem;
-  }
-`;
-
-export const BannerInner = styled.div`
-  position: relative;
-  z-index: 1;
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    grid-template-columns: 1fr;
+    padding: 3.5rem 1.25rem 3rem;
   }
 `;
 
 export const BannerContent = styled.div`
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  color: #f8fbff;
-`;
-
-export const BannerBadge = styled.div`
-  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.45rem 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  letter-spacing: 0.04em;
-`;
-
-export const BadgeDot = styled.span`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.colors.primary};
-  box-shadow: 0 0 0 6px rgba(255, 119, 16, 0.15);
-`;
-
-export const BadgeDivider = styled.span`
-  width: 28px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.5);
 `;
 
 export const BannerTitle = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes['5xl']};
+  font-size: ${({ theme }) => theme.fontSizes['6xl']};
   font-family: ${({ theme }) => theme.fonts.english};
   font-weight: bold;
+  margin-bottom: 0.5rem;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   letter-spacing: 0.02em;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes['3xl']};
+    font-size: ${({ theme }) => theme.fontSizes['4xl']};
   }
 `;
 
@@ -94,7 +56,7 @@ export const BannerSubtitle = styled.div`
   font-size: ${({ theme }) => theme.fontSizes['2xl']};
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: bold;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -102,16 +64,52 @@ export const BannerSubtitle = styled.div`
   }
 `;
 
-export const Description = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.base};
+export const BannerDescription = styled.p`
+  font-size: ${({ theme }) => theme.fontSizes.lg};
   font-family: ${({ theme }) => theme.fonts.primary};
-  max-width: 640px;
-  line-height: 1.7;
   color: rgba(248, 251, 255, 0.9);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-size: ${({ theme }) => theme.fontSizes.base};
   }
+`;
+
+export const BannerMeta = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 600px;
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+`;
+
+export const MetaItem = styled.div`
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+`;
+
+export const MetaLabel = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.2rem;
+`;
+
+export const MetaValue = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: bold;
 `;
 
 export const BannerCard = styled.div`
@@ -147,7 +145,8 @@ export const CardRow = styled.div`
 
 export const ProjectsSection = styled.section`
   padding: 5rem 2rem;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ variant, theme }) =>
+    variant === 'cream' ? theme.colors.backgroundCream : theme.colors.background};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 3rem 1rem;

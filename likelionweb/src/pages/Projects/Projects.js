@@ -1,29 +1,25 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { pageTransition, staggerContainer, staggerItem } from '../../styles/animations';
+import { pageTransition, staggerContainer, staggerItem, slideUp } from '../../styles/animations';
 import { getProjectsByGeneration } from '../../data/projects';
 import { siteContent } from '../../data/content';
 import ProjectCard from '../../components/sections/Projects/ProjectCard';
 import {
   PageContainer,
   Banner,
-  BannerInner,
   BannerContent,
-  BannerBadge,
-  BadgeDot,
-  BadgeDivider,
   BannerTitle,
   BannerSubtitle,
-  Description,
-  BannerCard,
-  CardTitle,
-  CardRow,
+  BannerDescription,
+  BannerMeta,
+  MetaItem,
+  MetaLabel,
+  MetaValue,
   ProjectsSection,
   SectionHeader,
   SectionIntro,
   SectionTitle,
-  ProjectsGrid,
-  EmptyState
+  ProjectsGrid
 } from './Projects.styles';
 
 function Projects() {
@@ -39,28 +35,32 @@ function Projects() {
       exit="exit"
     >
       <Banner>
-        <BannerInner>
-          <BannerContent>
-            <BannerBadge>
-              <BadgeDot />
-              <span>Project Archives</span>
-              <BadgeDivider />
-              <span>KAU LIKELION</span>
-            </BannerBadge>
-            <BannerTitle>{siteContent.organization.slogan}</BannerTitle>
-            <BannerSubtitle>{siteContent.organization.nameKr}</BannerSubtitle>
-            <Description>
-              한국항공대학교 멋쟁이사자처럼에서 개발한 다양한 웹/앱 서비스를 소개합니다.
-            </Description>
-          </BannerContent>
-
-          <BannerCard>
-            <CardTitle>Project Flight Plan</CardTitle>
-            <CardRow>• 운영진과 아기사자들이 함께 만든 결과물을 한눈에</CardRow>
-            <CardRow>• 아이디어 → 설계 → 개발 과정 아카이브</CardRow>
-            <CardRow>• GitHub 링크로 바로 확인</CardRow>
-          </BannerCard>
-        </BannerInner>
+        <BannerContent
+          as={motion.div}
+          variants={slideUp}
+          initial="initial"
+          animate="animate"
+        >
+          <BannerTitle>{siteContent.organization.slogan}</BannerTitle>
+          <BannerSubtitle>{siteContent.organization.nameKr}</BannerSubtitle>
+          <BannerDescription>
+            한국항공대학교 멋쟁이사자처럼에서 개발한 프로젝트들을 소개합니다.
+          </BannerDescription>
+          <BannerMeta>
+            <MetaItem>
+              <MetaLabel>Departure</MetaLabel>
+              <MetaValue>{siteContent.hero.flightSearch.departure}</MetaValue>
+            </MetaItem>
+            <MetaItem>
+              <MetaLabel>Arrival</MetaLabel>
+              <MetaValue>{siteContent.hero.flightSearch.arrival}</MetaValue>
+            </MetaItem>
+            <MetaItem>
+              <MetaLabel>Flight Date</MetaLabel>
+              <MetaValue>{siteContent.hero.flightSearch.date}</MetaValue>
+            </MetaItem>
+          </BannerMeta>
+        </BannerContent>
       </Banner>
 
       <ProjectsSection>
@@ -88,7 +88,9 @@ function Projects() {
             </motion.div>
           ))}
         </ProjectsGrid>
+      </ProjectsSection>
 
+      <ProjectsSection variant="cream">
         <SectionHeader
           as={motion.div}
           initial={{ opacity: 0, y: -20 }}

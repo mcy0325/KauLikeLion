@@ -21,16 +21,10 @@ export const HeroContainer = styled.section`
 export const HeroGrid = styled.div`
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 2.5rem;
-  max-width: 1180px;
+  max-width: 800px;
   margin: 0 auto;
-  align-items: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: center;
 `;
 
 export const HeroText = styled.div`
@@ -38,6 +32,8 @@ export const HeroText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  text-align: center;
+  align-items: center;
 `;
 
 export const HeroBadge = styled.div`
@@ -66,6 +62,16 @@ export const BadgeDivider = styled.span`
   width: 28px;
   height: 1px;
   background: rgba(255, 255, 255, 0.5);
+`;
+
+export const BadgeTag = styled.span`
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: ${({ theme }) => theme.fontSizes.xs};
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 `;
 
 export const HeroTitle = styled.div`
@@ -100,11 +106,87 @@ export const HeroDescription = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.base};
 `;
 
+export const HeroIntro = styled.div`
+  max-width: 700px;
+  line-height: 1.8;
+  color: rgba(248, 251, 255, 0.95);
+  margin: 1.5rem 0;
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  text-align: center;
+
+  p {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    color: ${({ theme }) => theme.colors.accent};
+    font-weight: bold;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    max-width: 100%;
+  }
+`;
+
+export const HeroButtons = styled.div`
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+
+export const HeroButton = styled.button`
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  background: ${({ primary, theme }) =>
+    primary ? theme.colors.primary : 'transparent'};
+  color: white;
+  border: ${({ primary }) => (primary ? 'none' : '2px solid white')};
+  font-family: ${({ theme }) => theme.fonts.primary};
+
+  &:hover {
+    background: ${({ primary, theme }) =>
+      primary ? theme.colors.primaryHover : 'white'};
+    color: ${({ primary, theme }) =>
+      primary ? 'white' : theme.colors.primary};
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 119, 16, 0.4);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+  }
+`;
+
 export const HeroMeta = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   max-width: 600px;
+  width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
 `;
 
 export const MetaItem = styled.div`
@@ -262,4 +344,56 @@ export const PathLabel = styled.div`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.86);
+`;
+
+export const HeroTicket = styled.div`
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 2;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+export const Ticket = styled.div`
+  background: white;
+  color: ${({ theme }) => theme.colors.text};
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: rotate(-5deg);
+  border: 2px dashed ${({ theme }) => theme.colors.primary};
+`;
+
+export const TicketHeader = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes['2xl']};
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
+export const TicketContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const TicketRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+`;
+
+export const TicketLabel = styled.span`
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.textLight};
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+`;
+
+export const TicketValue = styled.span`
+  font-weight: bold;
+  font-size: ${({ theme }) => theme.fontSizes.base};
 `;

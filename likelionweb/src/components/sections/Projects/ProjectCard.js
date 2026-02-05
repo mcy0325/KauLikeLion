@@ -13,13 +13,14 @@ import {
   CardLink
 } from './ProjectCard.styles';
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, variant }) {
   return (
     <CardContainer
       as={motion.div}
       variants={glassCardHover}
       initial="rest"
       whileHover="hover"
+      $variant={variant}
     >
       <CardContent>
         <CardBatch>{project.generation}th</CardBatch>

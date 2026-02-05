@@ -1,35 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { slideUp, slideInRight } from '../../../styles/animations';
+import { slideUp } from '../../../styles/animations';
 import { siteContent } from '../../../data/content';
 import {
   HeroContainer,
   HeroGrid,
   HeroText,
-  HeroBadge,
-  BadgeDot,
-  BadgeDivider,
   HeroTitle,
   HeroSubtitle,
-  HeroDescription,
+  HeroIntro,
   HeroMeta,
   MetaItem,
   MetaLabel,
-  MetaValue,
-  HeroBoard,
-  BoardGlow,
-  BoardHeader,
-  BoardTag,
-  BoardStatus,
-  BoardRoute,
-  AirportCode,
-  RouteArrow,
-  BoardPath,
-  PathLine,
-  PathNodes,
-  PathNode,
-  PathDot,
-  PathLabel
+  MetaValue
 } from './Hero.styles';
 
 function Hero() {
@@ -44,16 +27,15 @@ function Hero() {
           initial="initial"
           animate="animate"
         >
-          <HeroBadge>
-            <BadgeDot />
-            <span>KAU LIKELION</span>
-            <BadgeDivider />
-            <span>Flight Mode</span>
-          </HeroBadge>
-
           <HeroTitle>{hero.mainTitle}</HeroTitle>
           <HeroSubtitle>{hero.subtitle}</HeroSubtitle>
-          <HeroDescription>항공대 멋쟁이사자처럼이 아이디어를 현실로 이륙시키는 여정을 시작합니다.</HeroDescription>
+
+          <HeroIntro>
+            <p>멋쟁이사자처럼은 현재 전국 61개 대학이 함께하고 있는 연합 동아리입니다.</p>
+            <p>"내 아이디어를 내 손으로 실현한다"라는 슬로건 아래, 웹 개발을 배우고 프로젝트를 수행합니다.</p>
+            <p>한국항공대학교 멋사의 선발기준에 코딩 실력은 '절대' 없습니다!</p>
+            <p>전공, 학년, 나이에 제한 없이 한국항공대학교 학생이라면 재학생, 휴학생 무관 누구나 가입할 수 있습니다!</p>
+          </HeroIntro>
 
           <HeroMeta>
             <MetaItem>
@@ -70,47 +52,6 @@ function Hero() {
             </MetaItem>
           </HeroMeta>
         </HeroText>
-
-        <HeroBoard
-          as={motion.div}
-          variants={slideInRight}
-          initial="initial"
-          animate="animate"
-        >
-          <BoardGlow />
-          <BoardHeader>
-            <BoardTag>Boarding Pass</BoardTag>
-            <BoardStatus>Creative Flight Mode</BoardStatus>
-          </BoardHeader>
-
-          <BoardRoute>
-            <AirportCode>KAU</AirportCode>
-            <RouteArrow />
-            <AirportCode>LION</AirportCode>
-          </BoardRoute>
-
-          <BoardPath>
-            <PathLine />
-            <PathNodes>
-              <PathNode>
-                <PathDot />
-                <PathLabel>KAU</PathLabel>
-              </PathNode>
-              <PathNode>
-                <PathDot />
-                <PathLabel>IDEA</PathLabel>
-              </PathNode>
-              <PathNode>
-                <PathDot />
-                <PathLabel>DEVELOPMENT</PathLabel>
-              </PathNode>
-              <PathNode>
-                <PathDot />
-                <PathLabel>LION</PathLabel>
-              </PathNode>
-            </PathNodes>
-          </BoardPath>
-        </HeroBoard>
       </HeroGrid>
     </HeroContainer>
   );

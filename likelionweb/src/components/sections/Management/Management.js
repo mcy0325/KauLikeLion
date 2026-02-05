@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '../../../styles/animations';
-import { management13th } from '../../../data/management';
+import { management14th } from '../../../data/management';
 import ManagementCard from './ManagementCard';
 import {
   ManagementContainer,
@@ -24,7 +24,7 @@ function Management() {
         <ManagementIntro>
           앞으로 1년 동안 아기사자들과 함께 할 운영진들
         </ManagementIntro>
-        <ManagementTitle>LIKELION 13th Management</ManagementTitle>
+        <ManagementTitle>LIKELION 14th Management</ManagementTitle>
       </ManagementHeader>
 
       <ManagementGrid
@@ -34,7 +34,7 @@ function Management() {
         whileInView="animate"
         viewport={{ once: true }}
       >
-        {management13th.map((person, index) => (
+        {management14th.map((person, index) => (
           <motion.div key={person.id} variants={staggerItem}>
             <ManagementCard person={person} index={index} />
           </motion.div>

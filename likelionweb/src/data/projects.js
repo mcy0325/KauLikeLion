@@ -29,6 +29,16 @@ export const projects = [
     github: 'https://github.com/Zsun3011/classfit',
     tags: ['React', 'Spring Boot', 'AWS'],
   },
+  {
+    id: 'ibsi',
+    title: '입시혁명',
+    generation: 13,
+    year: 2025,
+    description: 'AI 기반 입시 도우미',
+    category: ['Web'],
+    github: 'https://github.com/gotothesky2',
+    tags: ['React', 'Spring Boot', 'Open API(CaarerNet)'],
+  },
    {
     id: 'woowang',
     title: '우리따라왕',
