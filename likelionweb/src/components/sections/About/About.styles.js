@@ -47,7 +47,7 @@ export const AboutGrid = styled.div`
 export const AboutCard = styled.div`
   text-align: center;
   padding: 2rem;
-  background: ${({ theme }) => theme.colors.backgroundCream};
+  background: white;
   border-radius: 15px;
   transition: transform 0.3s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
