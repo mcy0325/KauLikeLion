@@ -70,7 +70,7 @@ export const management13th = [
     generation: 13,
     img: '/jerry_13.png',
     github: 'https://github.com/yyoonngg',
-    rank: 'senior-crew',
+    rank: 'first-officer',
   },
   {
     id: 'leesajang_13',

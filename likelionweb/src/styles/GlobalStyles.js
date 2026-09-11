@@ -60,6 +60,10 @@ export const GlobalStyles = createGlobalStyle`
                 color ${({ theme }) => theme.transitions.medium};
     padding-top: 72px;
 
+    @media (max-width: 768px) {
+      padding-top: 64px;
+    }
+
     /* Subtle cloud pattern background */
     position: relative;
 

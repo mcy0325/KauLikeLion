@@ -1,17 +1,17 @@
 export const lightTheme = {
   colors: {
     // Primary Colors - LIKELION
-    primary: '#ff7710',        // LIKELION orange
-    primaryHover: '#f77a0e',
+    primary: '#FF7710',        // LIKELION orange
+    primaryHover: '#ff8c3a',
     primaryLight: '#f99a0e',
 
     // Secondary Colors - Aviation Sky
-    secondary: '#299bd8',      // Sky blue
-    secondaryHover: '#1262af',
+    secondary: '#4A90E2',      // Sky blue
+    secondaryHover: '#299bd8',
 
-    // Accent Colors - Deep Blue
-    accent: '#1262af',         // Deep blue
-    accentLight: '#299bd8',
+    // Accent Colors - Yellow
+    accent: '#F4D03F',         // Yellow accent
+    accentLight: '#F4D03F',
 
     // Aviation Theme Colors
     sky: {
@@ -31,15 +31,16 @@ export const lightTheme = {
     // Background Colors
     background: '#FFFFFF',
     backgroundAlt: '#F9FAFB',
+    backgroundCream: '#FFF9F0',  // Cream background
     backgroundSky: '#f0f8ff',  // Alice blue for sections
 
     // Text Colors
-    text: '#424242',
+    text: '#2C3E50',
     textSecondary: '#666666',
-    textLight: '#999999',
+    textLight: '#7F8C8D',
 
     // UI Elements
-    border: '#E5E7EB',
+    border: '#E8E8E8',
     borderSky: '#b3d9f2',      // Sky-themed border
     cardBg: 'rgba(255, 255, 255, 0.95)',
     glassBg: 'rgba(255, 255, 255, 0.1)',
@@ -57,6 +58,7 @@ export const lightTheme = {
     sky: 'linear-gradient(180deg, #87ceeb 0%, #299bd8 50%, #1262af 100%)',
     skyHorizon: 'linear-gradient(180deg, #e0f2ff 0%, #87ceeb 50%, #299bd8 100%)',
     sunset: 'linear-gradient(135deg, #ff7710 0%, #f99a0e 100%)',
+    purple: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     heroOverlay: 'linear-gradient(135deg, rgba(41, 155, 216, 0.1) 0%, rgba(18, 98, 175, 0.1) 100%)',
     cloudyDay: 'linear-gradient(to bottom, #e0f2ff 0%, #ffffff 50%, #f7f9fc 100%)',
     airplaneStripe: 'linear-gradient(90deg, #1262af 0%, #299bd8 50%, #87ceeb 100%)',
