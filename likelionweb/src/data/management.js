@@ -106,57 +106,57 @@ export const management13th = [
 
 export const management14th = [
   {
-    id: 'yaan_14',
-    name: '얀',
-    role: '회장',
-    department: '소프트웨어학과',
-    generation: 14,
-    img: '/yaan_13.png',
-    github: 'https://github.com/yaaan7',
-    rank: 'captain',
+    "id": "yaan_14",
+    "name": "얀",
+    "role": "회장",
+    "department": "소프트웨어학과",
+    "generation": 14,
+    "img": "/yaan_14.png",
+    "github": "https://github.com/yaaan7",
+    "rank": "captain"
   },
   {
-    id: 'nana_14',
-    name: '나나',
-    role: '부회장',
-    department: '소프트웨어학과',
-    generation: 14,
-    img: '/nana_14.png',
-    github: 'https://github.com/kimyena123',
-    rank: 'first-officer',
+    "id": "nana_14",
+    "name": "나나",
+    "role": "부회장",
+    "department": "소프트웨어학과",
+    "generation": 14,
+    "img": "/nana_14.png",
+    "github": "https://github.com/kimyena123",
+    "rank": "first-officer"
   },
   {
-    id: 'dylan_14',
-    name: '딜런',
-    role: '운영진',
-    department: '소프트웨어학과',
-    generation: 14,
-    img: '/dylan_14.png',
-    github: 'https://github.com/dh1180',
-    rank: 'senior-crew',
+    "id": "jimal_14",
+    "name": "지말",
+    "role": "운영진",
+    "department": "소프트웨어학과",
+    "generation": 14,
+    "img": "/jimal_14.png",
+    "github": "https://github.com/qkwltkwkd1",
+    "rank": "senior-crew"
   },
   {
-    id: 'coda_14',
-    name: '코다',
-    role: '운영진',
-    department: '소프트웨어학과',
-    generation: 14,
-    img: '/coda_14.png',
-    github: 'https://github.com/selnem',
-    rank: 'senior-crew',
+    "id": "coda_14",
+    "name": "코다",
+    "role": "운영진",
+    "department": "소프트웨어학과",
+    "generation": 14,
+    "img": "/coda_14.png",
+    "github": "https://github.com/selnem",
+    "rank": "senior-crew"
   },
   {
-    id: 'jimal_14',
-    name: '지말',
-    role: '운영진',
-    department: '소프트웨어학과',
-    generation: 14,
-    img: '/jimal_14.jpg',
-    github: 'https://github.com/qkwltkwkd1',
-    rank: 'senior-crew',
-  },
+    "id": "dylan_14",
+    "name": "딜런",
+    "role": "운영진",
+    "department": "소프트웨어학과",
+    "generation": 14,
+    "img": "/dylan_14.png",
+    "github": "https://github.com/dh1180",
+    "rank": "senior-crew"
+  }
 ];
 
-export const getAllManagement = () => [...management12th, ...management13th];
+export const getAllManagement = () => [...management12th, ...management13th, ...management14th];
 export const getManagementByGeneration = (gen) =>
-  gen === 12 ? management12th : management13th;
+  getAllManagement().filter(person => person.generation === gen);

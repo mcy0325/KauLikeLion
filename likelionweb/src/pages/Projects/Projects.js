@@ -25,6 +25,7 @@ import {
 function Projects() {
   const projects12 = getProjectsByGeneration(12);
   const projects13 = getProjectsByGeneration(13);
+  const projects14 = getProjectsByGeneration(14);
 
   return (
     <PageContainer
@@ -62,6 +63,33 @@ function Projects() {
           </BannerMeta>
         </BannerContent>
       </Banner>
+
+      <ProjectsSection>
+        <SectionHeader
+          as={motion.div}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <SectionIntro>2026년 한국항공대학교 멋쟁이사자처럼</SectionIntro>
+          <SectionTitle>LIKELION 14th Projects</SectionTitle>
+        </SectionHeader>
+
+        <ProjectsGrid
+          as={motion.div}
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
+          {projects14.map(project => (
+            <motion.div key={project.id} variants={staggerItem}>
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </ProjectsGrid>
+      </ProjectsSection>
 
       <ProjectsSection>
         <SectionHeader
